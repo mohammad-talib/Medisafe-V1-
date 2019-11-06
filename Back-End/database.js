@@ -43,8 +43,29 @@ let getDate = callBack => {
 };
 
 
+let registUser = (cb, obj) => {
+  Users.insertMany(
+    [
+      {
+        username: obj.userName,
+        email: obj.email,
+        password: obj.password,
+        age: obj.age,
+        gender: obj.gender
+      }
+    ],
+    function(err, newUser) {
+      if (err) {
+        console.log("err", err);
+      }
+      console.log("newUser:", newUser);
+      cb(newUser);
+    }
+  );
+};
+
 //=====================================MODULE EXPORTS=============================================//
 module.exports = {
   getDate,
- 
+  registUser
 };

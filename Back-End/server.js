@@ -36,14 +36,14 @@ app.get("/", (req, res) => {
 // });
 
 //=======================================ADD DATA===============================================//
-// app.post("/addPlace", (req, res) => {
-//   let inputs=req.body;
-//   console.log("BODY:", inputs);
-//   DB.addPlace(result => {
-//     console.log("CALL BACK FROM SERVER");
-//     res.json(result);
-//   }, inputs);
-// });
+app.post("/registration", (req, res) => {
+  let box = req.body;
+  console.log("box", box);
+  DB.registUser(x => {
+    console.log("registration in server");
+    res.json(x);
+  }, box);
+});
 
 // app.post("/addData", (req, res) => {
 //   let inputs=req.body;
