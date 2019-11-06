@@ -15,9 +15,6 @@ class Register extends Component {
         this.setState({
             [name]:e.nativeEvent.text
         })
-        // console.log('e.nativeEvent.text :', e.nativeEvent.text);
-        // console.log('e.name :', e.nativeEvent);
-        // console.log('this.state :', this.state);
     }
 
     addNewUser=()=>{

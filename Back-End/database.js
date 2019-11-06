@@ -64,8 +64,23 @@ let registUser = (cb, obj) => {
   );
 };
 
+let getUser = (cb, object) => {
+  console.log("From Server", object.email);
+  Users.findOne({ email: object.email, password: object.password }, function(
+    err,
+    docs
+  ) {
+    if (err) {
+      console.log("ERR:", err);
+    }
+    console.log("DOCS FIND ONE:", docs);
+    cb(docs);
+  });
+};
+
 //=====================================MODULE EXPORTS=============================================//
 module.exports = {
   getDate,
-  registUser
+  registUser,
+  getUser
 };

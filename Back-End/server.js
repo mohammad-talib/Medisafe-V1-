@@ -28,6 +28,13 @@ app.get("/", (req, res) => {
 //   });
 // });
 
+app.post("/login", (req, res) => {
+  let object = req.body;
+  DB.getUser(repo => {
+    res.json(repo);
+  }, object);
+});
+
 
 //===================================GET DATA BY ID==============================================//
 
